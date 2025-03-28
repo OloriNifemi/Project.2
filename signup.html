@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup-page</title>
+    <link rel="stylesheet" href="./signup.css">
+</head>
+<body>
+<section class="wrapper">
+    <div class="container">
+        <div class="text">
+            <h2 class="text1">CREATE ACCOUNT</h2>
+            <p class="text2">Let get started into the world of unbeatable accessories!</p>
+        </div>
+        <!-- <div class="con-wrapper">
+            <div class="con">
+                <ion-icon class="icon" name="logo-google"></ion-icon>
+                <span class="span"> Continue with Google</span>
+            </div>
+            <div class="con">
+                <ion-icon class="icon" name="logo-apple"></ion-icon>
+                <span class="span">Continue with Apple</span>
+            </div>
+        </div>
+        <div class="or-con">Or</div> -->
+
+        <div class="input-con">
+            <div class="wrapper1">
+                <div class="input-div">  
+                    <p class="pcon">Name</p>
+                    <input class="inpu" id="name"  type="text" placeholder="Enter Name">
+                </div>
+
+                <div class="input-div">
+                    <p class="pcon">Username</p>
+                    <input class="inpu" id="username" type="text" placeholder="Enter Username">
+                </div>
+
+                <div class="input-div">
+                    <p class="pcon">Password</p>
+                    <input class="inpu" id="password"  type="password" placeholder="Enter Password">
+                </div>
+
+                <div class="form-select">
+                    <form action="#">
+                        <select name="" id="state">
+                            <option value=""> Select State</option>
+                        </select>
+                    </form>
+                </div>
+
+              <div class="to-signup">
+                    <div>
+                        <input  class="checkbox" type="checkbox"><span class="terms"> I Agree with <a href="#">Terms and Condition</a></span>
+                    </div>
+
+                    <div>
+                        <button class="register" onclick="register()">register</button>
+                    </div>
+              </div>
+            </div>  
+        </div>
+        <p class="message"></p>
+    </div>
+</section>
+
+
+
+
+
+    <script>
+        function onclick() {
+        let signUpName = document.getElementById("name").value
+        let username = document.getElementById("username").value
+        let password = document.getElementById("password").value
+       
+
+        if(signUpName === "" || username === "" || password === "" ){
+            document.getElementById("message").innerText = "please fill all fields"
+            alerts("please fill all fields")
+            return;
+        }
+    
+        localStorage.setItem("signUpName", signUpName);
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+        localStorage.setItem("location", location);
+        alert ("Registration Successful")
+
+        function showAlert() { 
+    let mail = document.getElementById("email").value.trim(); 
+    
+    if (mail === "") { 
+        document.getElementById("message")
+        alert("Please fill all fields"); 
+        return;
+    } else {
+        console.log("SUCCESS!");
+        alert("EMAIL SENT!");
+    }
+}
+    }
+
+ 
+    window.onload = function() {
+    
+        var states = [
+      "Lagos", "Kano", "Rivers", "Oyo", "Kaduna", "Enugu", "Abuja", 
+      "Edo", "Delta", "Anambra", "Kogi", "Benue", "Ondo", "Ekiti", 
+      "Osun", "Kwara", "Borno", "Yobe", "Sokoto", "Zamfara","Niger"
+    ];
+
+    var dropdown = document.getElementById("state")
+    
+            states.forEach(function(state) {
+                var option = document.createElement("option");
+                option.value = state;
+                option.textContent = state;
+                dropdown.appendChild(option)
+            });
+    }
+
+    window.onload = createStateDropdown;
+
+
+
+   
+
+  
+       
+
+    </script>
+
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
